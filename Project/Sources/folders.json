@@ -1,8 +1,6 @@
-﻿{
+{
 	"_API": {
 		"methods": [
-			"C_OPEN_EDITOR",
-			"C_Print_label",
 			"C_SELECT_ALL",
 			"C_SELECT_COPY",
 			"C_SELECT_CUT",
@@ -21,7 +19,6 @@
 			"LABELS_INIT"
 		]
 	},
-	"(unitTest)": {},
 	"0_DEV": {
 		"methods": [
 			"00_LABEL_OPEN_EDITOR",
@@ -462,9 +459,5 @@
 			"xml_IsValidReference"
 		]
 	},
-	"trash": {
-		"groups": [
-			"(unitTest)"
-		]
-	}
+	"trash": {}
 }
