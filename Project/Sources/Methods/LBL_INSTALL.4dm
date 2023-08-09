@@ -1,19 +1,31 @@
 //%attributes = {"shared":true}
+/*
+
+インストール用メソッド
+
+*/
+
 
 //作業用変数定義
 C_TEXT:C284($code)  //メソッドコード用
 ARRAY LONGINT:C221($pos; 0)  //Match regex用
 ARRAY LONGINT:C221($len; 0)  //Match regex用
 
+C_BOOLEAN:C305($not_install; $modified)
+C_COLLECTION:C1488($lines)
+C_TEXT:C284($row)
+C_TEXT:C284($path)
+C_TEXT:C284($param; $param1; $param2; $param3; $bonus)
+
+
 //全メソッドのパスを得る
-//ARRAY TEXT($methods; 0)
 C_COLLECTION:C1488($methods)
 $methods:=LBL_XF_Get_all_methods  //(->$methods)
 
 //インストール済みか検査する
 $not_install:=True:C214
-For each ($m; $methods) While ($not_install)
-	METHOD GET CODE:C1190($m; $code; *)
+For each ($path; $methods) While ($not_install)
+	METHOD GET CODE:C1190($path; $code; *)
 	If (Match regex:C1019("(?m)^\\s*LBL_PRINT[ \\(]*$"; $code; 1))
 		$not_install:=False:C215  //インストールされていた
 	End if 
@@ -29,7 +41,6 @@ End if
 
 Case of 
 	: (OK=1) & ($not_install)
-		
 		
 /*
 		

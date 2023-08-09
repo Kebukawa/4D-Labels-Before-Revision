@@ -1,6 +1,6 @@
 //%attributes = {}
 
-//C_TEXT($document)
+C_TEXT:C284($document)
 //LBL_PRINT(->[Table_1]; $document)
 
 PRINT LABEL:C39  //コメント

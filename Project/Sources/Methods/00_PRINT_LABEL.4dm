@@ -24,4 +24,5 @@ Case of
 		//______________________________________________________
 End case 
 
-$Lon_error:=C_Print_label($Lon_table; $File_path)
+//$Lon_error:=C_Print_label($Lon_table; $File_path)
+$Lon_error:=LBL_C_Print_label($Lon_table; $File_path)

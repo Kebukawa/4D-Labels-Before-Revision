@@ -31,10 +31,10 @@ C_OBJECT:C1216($file; $o)
 ARRAY LONGINT:C221($tLon_records; 0)
 
 If (False:C215)
-	C_LONGINT:C283(C_Print_label; $0)
-	C_LONGINT:C283(C_Print_label; $1)
-	C_TEXT:C284(C_Print_label; $2)
-	C_TEXT:C284(C_Print_label; $3)
+	C_LONGINT:C283(LBL_C_Print_label; $0)  //modified by kebu
+	C_LONGINT:C283(LBL_C_Print_label; $1)  //modified by kebu
+	C_TEXT:C284(LBL_C_Print_label; $2)  //modified by kebu
+	C_TEXT:C284(LBL_C_Print_label; $3)  //modified by kebu
 End if 
 
 // ----------------------------------------------------

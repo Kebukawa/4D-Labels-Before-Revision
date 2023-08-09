@@ -18,9 +18,9 @@ C_LONGINT:C283($Lon_masterTable; $Lon_parameters; $Win_hdl)
 C_TEXT:C284($Dir_resources; $Txt_labelDocument)
 
 If (False:C215)
-	C_LONGINT:C283(C_OPEN_EDITOR; $1)
-	C_BOOLEAN:C305(C_OPEN_EDITOR; $2)
-	C_TEXT:C284(C_OPEN_EDITOR; $3)
+	C_LONGINT:C283(LBL_C_OPEN_EDITOR; $1)  //modified by kebu
+	C_BOOLEAN:C305(LBL_C_OPEN_EDITOR; $2)  //modified by kebu
+	C_TEXT:C284(LBL_C_OPEN_EDITOR; $3)  //modified by kebu
 End if 
 
 // ----------------------------------------------------

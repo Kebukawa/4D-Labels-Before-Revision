@@ -12,6 +12,11 @@ http://tech.4d-japan.com/Tips/2385/
 C_COLLECTION:C1488($0)
 $0:=New collection:C1472
 
+If (False:C215)
+	C_COLLECTION:C1488(LBL_XF_Get_all_methods; $0)
+End if 
+
+
 ARRAY TEXT:C222($ref_objects; 0)
 C_LONGINT:C283($i)
 
