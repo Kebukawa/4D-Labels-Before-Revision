@@ -3,15 +3,15 @@
 バグ修正前の状態で印刷するするため、バグ修正の影響を無くすことが目的。
 
 > 参考記事
-> [miyako add v17 R6 compatible mode](https://github.com/4d/4D-Labels/tree/11a76fd8425175efb8b7bdde887897a8d8e0507c)
-> [4d-tips-fix-label-editor](https://github.com/4D-JP/4d-tips-fix-label-editor)
+> > [miyako add v17 R6 compatible mode](https://github.com/4d/4D-Labels/tree/11a76fd8425175efb8b7bdde887897a8d8e0507c)<br/>
+> > [4d-tips-fix-label-editor](https://github.com/4D-JP/4d-tips-fix-label-editor)
 
 
 ## インストール
 
-インストール用のメソッド[`LBL_INSTALL`](./blob/main/Project/Sources/Methods/LBL_INSTALL.4dm)を起動して、インストール／アンインストールができます。
+インストール用のメソッド[`LBL_INSTALL`](./Project/Sources/Methods/LBL_INSTALL.4dm)を起動して、インストール／アンインストールができます。
 
-インストールを行うと、`PRINT LABEL`コマンドの呼び出しが、[`LBL_PRINT`](./blob/main/Project/Sources/Methods/LBL_PRINT.4dm)メソッドの呼び出しに変更されます。
+インストールを行うと、`PRINT LABEL`コマンドの呼び出しが、[`LBL_PRINT`](./Project/Sources/Methods/LBL_PRINT.4dm)メソッドの呼び出しに変更されます。
 
 
 ## 変更点
