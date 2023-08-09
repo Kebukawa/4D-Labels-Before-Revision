@@ -51,7 +51,11 @@ End if
 
 // ----------------------------------------------------
 
-$boo_isLightScheme:=(FORM Get color scheme:C1761="light")
+If (Num:C11(Application version:C493)>1900)  // by kebu
+	$boo_isLightScheme:=(FORM Get color scheme:C1761="light")
+Else 
+	$boo_isLightScheme:=True:C214
+End if 
 
 $Dom_root:=DOM Parse XML source:C719(OB Get:C1224($Obj_param; "root-media"; Is text:K8:3)+$Txt_tool+Choose:C955($boo_isLightScheme; ""; "_dark")+".svg")
 
@@ -95,7 +99,8 @@ If (OK=1)
 		SVG EXPORT TO PICTURE:C1017($Dom_root; $Pic_buffer)
 		CONVERT PICTURE:C1002($Pic_buffer; ".png")
 		
-		OBJECT SET VALUE:C1742($Txt_tool; $Pic_buffer)
+		//OBJECT SET VALUE($Txt_tool; $Pic_buffer)// by kebu
+		OBJECT Get pointer:C1124(Object named:K67:5; $Txt_tool)->:=$Pic_buffer  // by kebu
 		
 	End if 
 	

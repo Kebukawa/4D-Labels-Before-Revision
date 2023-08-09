@@ -35,7 +35,11 @@ Case of
 		
 		wizard_GOTO_PAGE(1)
 		
-		$boo_light:=(FORM Get color scheme:C1761="light")
+		If (Num:C11(Application version:C493)>1900)  // by kebu
+			$boo_light:=(FORM Get color scheme:C1761="light")
+		Else 
+			$boo_light:=True:C214
+		End if 
 		OBJECT SET VISIBLE:C603(*; "@background@"; $boo_light)
 		
 		

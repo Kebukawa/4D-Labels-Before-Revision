@@ -45,7 +45,12 @@ End if
 
 // ----------------------------------------------------
 
-$txt_suffix:=Choose:C955((FORM Get color scheme:C1761="light"); ""; "_dark")
+If (Num:C11(Application version:C493)>1900)  // by kebu
+	$txt_suffix:=Choose:C955((FORM Get color scheme:C1761="light"); ""; "_dark")
+Else 
+	$txt_suffix:=""
+End if 
+
 
 Case of 
 		

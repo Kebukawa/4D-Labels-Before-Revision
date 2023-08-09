@@ -128,7 +128,8 @@ SET LIST ITEM PARAMETER:C986($Lst_buffer; 0; "data"; True:C214)
 APPEND TO LIST:C376($Lst_buffer; Get localized string:C991("horizontal"); 2)
 SET LIST ITEM PARAMETER:C986($Lst_buffer; 0; "data"; False:C215)
 //obj_BOUND_WITH_LIST($Lst_buffer; "layout.order")
-OBJECT SET VALUE:C1742("layout.order"; $Lst_buffer)
+//OBJECT SET VALUE("layout.order"; $Lst_buffer)
+OBJECT Get pointer:C1124(Object named:K67:5; "layout.order")->:=$Lst_buffer  // by kebu
 //==================== build the units' menu
 $Lst_buffer:=New list:C375
 APPEND TO LIST:C376($Lst_buffer; Get localized string:C991("point"); 1)
@@ -141,7 +142,8 @@ APPEND TO LIST:C376($Lst_buffer; Get localized string:C991("inch"); 4)
 SET LIST ITEM PARAMETER:C986($Lst_buffer; 0; "data"; "in")
 SELECT LIST ITEMS BY POSITION:C381($Lst_buffer; 1)
 //obj_BOUND_WITH_LIST($Lst_buffer; "size.unit.menu")
-OBJECT SET VALUE:C1742("size.unit.menu"; $Lst_buffer)
+//OBJECT SET VALUE("size.unit.menu"; $Lst_buffer)
+OBJECT Get pointer:C1124(Object named:K67:5; "size.unit.menu")->:=$Lst_buffer  // by kebu
 
 //==================== build the methods' list
 $Lst_buffer:=New list:C375
@@ -197,7 +199,8 @@ If (Count list items:C380($Lst_buffer)>1)
 End if 
 
 //obj_BOUND_WITH_LIST($Lst_buffer; "method.list")
-OBJECT SET VALUE:C1742("method.list"; $Lst_buffer)
+//OBJECT SET VALUE("method.list"; $Lst_buffer)
+OBJECT Get pointer:C1124(Object named:K67:5; "method.list")->:=$Lst_buffer  // by kebu
 
 CLEAR VARIABLE:C89($tObj_param)
 

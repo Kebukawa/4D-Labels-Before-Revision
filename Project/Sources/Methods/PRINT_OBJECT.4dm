@@ -277,7 +277,8 @@ Case of
 		OBJECT SET RGB COLORS:C628(*; $target; Color_to_long($stroke))  // ; -2)
 		
 		// Set the value
-		OBJECT SET VALUE:C1742($target; String:C10($o.value))
+		//OBJECT SET VALUE($target; String($o.value))
+		OBJECT Get pointer:C1124(Object named:K67:5; $target)->:=String:C10($o.value)  // by kebu
 		
 		$hOffset:=$hOffset+0.5
 		$vOffset:=$vOffset+0.5
@@ -296,7 +297,8 @@ If ($target#"variable@")\
 	End if 
 	
 	// Assign to the object
-	OBJECT SET VALUE:C1742($target; $picture)
+	//OBJECT SET VALUE($target; $picture)
+	OBJECT Get pointer:C1124(Object named:K67:5; $target)->:=$picture  // by kebu
 	
 End if 
 

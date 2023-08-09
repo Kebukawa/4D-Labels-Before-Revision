@@ -73,7 +73,11 @@ If (Not:C34(<>inited))\
 		"image-left"; 70; \
 		"image-top"; 10)
 	
-	$boo_isColorSchemeLight:=(FORM Get color scheme:C1761="light")
+	If (Num:C11(Application version:C493)>1900)  // by kebu
+		$boo_isColorSchemeLight:=(FORM Get color scheme:C1761="light")
+	Else 
+		$boo_isColorSchemeLight:=True:C214
+	End if 
 	
 	//the color for the deactivated texts
 	OB SET:C1220(<>label_params; \
