@@ -6,15 +6,20 @@
 > > [miyako add v17 R6 compatible mode](https://github.com/4d/4D-Labels/tree/11a76fd8425175efb8b7bdde887897a8d8e0507c)<br/>
 > > [4d-tips-fix-label-editor](https://github.com/4D-JP/4d-tips-fix-label-editor)
 
-
 ## インストール
 
-インストール用のメソッド[`LBL_INSTALL`](./Project/Sources/Methods/LBL_INSTALL.4dm)を起動して、インストール／アンインストールができます。
+本プログラムは、コンポーネントとして作成してあります。コンポーネントは、基本的にビルドして利用しますが、プロジェクトのままコンポーネントとしてインストールすることも可能です。
 
-インストールを行うと、`PRINT LABEL`コマンドの呼び出しが、[`LBL_PRINT`](./Project/Sources/Methods/LBL_PRINT.4dm)メソッドの呼び出しに変更されます。
+プロジェクトのままコンポーネントとして利用される場合には、[`Project`](./Project)フォルダにある[`Labels.4DProject`](./Project/Labels.4DProject)ファイルのエイリアスを作成し、そのエリアスファイルを利用するデータベースの`Components`フォルダーに入れてください。
 
+コンポーネントとしてデータベースにインストールされると、ホストデータベースの`メソッド`ページに`コンポーネント`として`Labels`がリストされます。そして`Labels`コンポーネントの次の２つのメソッドが利用できるようになります。
++ [`LBL_INSTALL`](./Project/Sources/Methods/LBL_INSTALL.4dm)
++ [`LBL_PRINT`](./Project/Sources/Methods/LBL_PRINT.4dm)
 
-## 変更点
+`PRINT LABEL`コマンドの代わりに`LBL_PRINT`を使うように、すべてのメソッドを書き換える必要がありますが、手作業で行わずとも`LBL_INSTALL`メソッドを実行することで、すべてのメソッド中にある`PRINT LABEL`コマンドを書き換えることができます。
+すべての`PRINT LABEL`コマンドを書き換えたなら、インストールの完了になります。
+
+## オリジナルからの変更点
 
 + プロジェクトメソッドの`Print_label`の代わりに`LBL_Print_label`を設けて、`Print_label`の修正前の状況を再現
 + `C_OPEN_EDITOR.4dm`のホストへの公開を非公開にして`LBL_C_OPEN_EDITOR.4dm`とした
