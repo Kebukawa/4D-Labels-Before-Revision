@@ -17,7 +17,7 @@
 ## 変更点
 
 + プロジェクトメソッドの`Print_label`の代わりに`LBL_Print_label`を設けて、`Print_label`の修正前の状況を再現
-+ `C_Print_label.4dm`のホストへの公開を非公開にした
-+ `C_OPEN_EDITOR.4dm`のホストへの公開を非公開にした
++ `C_OPEN_EDITOR.4dm`のホストへの公開を非公開にした`LBL_C_OPEN_EDITOR.4dm`とした
++ `C_Print_label.4dm`のホストへの公開を非公開にして`LBL_C_Print_label.4dm`とした
 + `LABEL_WIZARD`フォームの`toolber.prebiew`オブジェクトのオブジェクトメソッドの`Print_label`呼び出しを`LBL_Print_label`に変更
 + `LABEL_WIZARD`フォームの`toolber.print`オブジェクトのオブジェクトメソッドの`Print_label`呼び出しを`LBL_Print_label`に変更
