@@ -1,4 +1,15 @@
 {
+	"__LBL__": {
+		"methods": [
+			"COMPILER_LBL",
+			"LBL_C_OPEN_EDITOR",
+			"LBL_C_Print_label",
+			"LBL_INSTALL",
+			"LBL_PRINT",
+			"LBL_Print_label",
+			"LBL_XF_Get_all_methods"
+		]
+	},
 	"_API": {
 		"methods": [
 			"C_SELECT_ALL",

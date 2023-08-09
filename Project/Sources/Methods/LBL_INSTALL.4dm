@@ -26,7 +26,7 @@ $methods:=LBL_XF_Get_all_methods  //(->$methods)
 $not_install:=True:C214
 For each ($path; $methods) While ($not_install)
 	METHOD GET CODE:C1190($path; $code; *)
-	If (Match regex:C1019("(?m)^\\s*LBL_PRINT[ \\(]*$"; $code; 1))
+	If (Match regex:C1019("(?m)^\\s*LBL_PRINT((\\s|\\(|).*)$"; $code; 1))
 		$not_install:=False:C215  //インストールされていた
 	End if 
 End for each 
@@ -155,7 +155,7 @@ PRINT LABEL([Table_1]; $document; >) → LBL_PRINT(->[Table_1]; $document; ">")
 						$modified:=True:C214
 						$code:=$code+"PRINT LABEL("+$param1+")"+$bonus+"\r"
 						
-					: (Match regex:C1019("^\\s*LBL_PRINT(\\s?.*)$"; $row; 1; $pos; $len))
+					: (Match regex:C1019("^\\s*LBL_PRINT((\\s|\\(|).*)$"; $row; 1; $pos; $len))
 						$bonus:=Substring:C12($row; $pos{1}; $len{1})
 						$modified:=True:C214
 						$code:=$code+"PRINT LABEL"+$bonus+"\r"
